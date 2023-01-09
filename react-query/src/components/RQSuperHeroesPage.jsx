@@ -7,16 +7,17 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const fetchSuperHeroes = () => {
-  return axios.get("http://localhost:4000/superheroes");
+  return axios.get("https://jsonplaceholder.typicode.com/posts");
 };
 
 const RQSuperHeroesPage = () => {
-  const { isLoading, data, isError, error } = useQuery(
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
     "super-heroes",
-    fetchSuperHeroes
+    fetchSuperHeroes,
+    { enabled: false }
   );
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <h2>Loading...</h2>;
   }
 
@@ -27,8 +28,9 @@ const RQSuperHeroesPage = () => {
   return (
     <>
       <h2>RQ Super Heroes Page</h2>
+      <button onClick={refetch}>Fetch Heroes</button>
       {data?.data.map((hero) => (
-        <div key={hero.name}>{hero.name}</div>
+        <div key={hero.id}>{hero.title}</div>
       ))}
     </>
   );

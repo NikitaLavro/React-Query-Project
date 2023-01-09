@@ -9,7 +9,7 @@ const SuperHeroesPage = () => {
   useEffect(() => {
     try {
       setIsLoading(true);
-      axios.get("http://localhost:4000/suprheroes").then((res) => {
+      axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
         setData(res.data);
         setIsLoading(false);
       });
