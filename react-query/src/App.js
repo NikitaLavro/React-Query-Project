@@ -9,9 +9,14 @@ import SuperHeroesPage from "./components/SuperHeroesPage";
 //Router
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
+//React-Query
+import { QueryClientProvider, QueryClient } from "react-query";
+
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
       <div>
         <nav>
           <ul>
@@ -32,7 +37,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 
