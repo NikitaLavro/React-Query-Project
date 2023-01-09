@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 //React-Query
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }
