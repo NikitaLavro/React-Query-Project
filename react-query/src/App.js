@@ -16,6 +16,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import ParallelQueriesPage from "./components/ParallelQueriesPage";
 import DynamicParallelPage from "./components/DynamicParallelPage";
 import DependentQueriesPage from "./components/DependentQueriesPage";
+import PaginatedQueriesPage from "./components/PaginatedQueriesPage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ function App() {
             path="/rq-dependent"
             element={<DependentQueriesPage email="lavro.nikita123@gmail.com" />}
           />
+          <Route path="/rq-paginated" element={<PaginatedQueriesPage />} />
 
           <Route
             path="/rq-dynamic-parallel"
