@@ -5,9 +5,10 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import RQSuperHeroesPage from "./components/RQSuperHeroesPage";
 import SuperHeroesPage from "./components/SuperHeroesPage";
+import RQSuperHeroPage from "./components/RQSuperHeroPage";
 
 //Router
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 //React-Query
 import { QueryClientProvider, QueryClient } from "react-query";
@@ -34,7 +35,9 @@ function App() {
         </nav>
         <Routes>
           <Route path="/super-heroes" element={<SuperHeroesPage />} />
-          <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+          <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />}>
+            <Route path=":heroId" element={<RQSuperHeroPage />} />
+          </Route>
           <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
