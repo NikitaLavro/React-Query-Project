@@ -13,6 +13,7 @@ import { Routes, Route, Link } from "react-router-dom";
 //React-Query
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import ParallelQueriesPage from "./components/ParallelQueriesPage";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/super-heroes" element={<SuperHeroesPage />} />
+          <Route path="/rq-parallel" element={<ParallelQueriesPage />} />
           <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />}>
             <Route path=":heroId" element={<RQSuperHeroPage />} />
           </Route>
