@@ -8,5 +8,7 @@
     { "id": 1, "name": "Chandler Bing" },
     { "id": 2, "name": "Joey Tribbiani" },
     { "id": 3, "name": "Rachel Green" }
-  ]
+  ],
+  "channels": [{ "id": "nikita", "courses": ["react", "vue", "angular"] }],
+  "users": [{ "id": "nikita", "courses": ["NikitaLavro"] }]
 }
