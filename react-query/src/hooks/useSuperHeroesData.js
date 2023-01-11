@@ -35,7 +35,11 @@ export const useAddSuperHeroData = () => {
         previousHeroData,
       };
     },
-    onError: () => {},
-    onSettled: () => {},
+    onError: (_error, _hero, context) => {
+      queryClient.setQueryData("super-heroes", context.previousHeroData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("super-heroes");
+    },
   });
 };
